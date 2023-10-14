@@ -12,8 +12,8 @@ class VideoCamera(object):
     def __init__(self) :
         self.width , self.height = 512,512
         # Real-world dimensions of the object you're detecting
-        self.KNOWN_WIDTH = 14.0  # Replace with the actual width in your case
-        self.KNOWN_DISTANCE = 69.0  # Replace with the actual distance in your case
+        self.KNOWN_WIDTH = 512 # Replace with the actual width in your case
+        self.KNOWN_DISTANCE = 40  # Replace with the actual distance in your case
 
 
         self.focal_length = self.KNOWN_WIDTH * self.KNOWN_DISTANCE / self.width
@@ -62,8 +62,9 @@ class VideoCamera(object):
                 continue
 
             object_width_in_frame = xmax - xmin
+            print(object_width_in_frame)
             distance = (self.KNOWN_WIDTH * self.focal_length) / object_width_in_frame
-                
+            distance /= 100
             score_txt = f'{100 * round(score,0)}'
             img = plot_on_frame()
             

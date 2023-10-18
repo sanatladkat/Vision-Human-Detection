@@ -37,7 +37,7 @@ class VideoCamera(object):
 
         img = self.frame
 
-        # * for testing only
+        # * for testing only rudra
         img = cv2.resize(img, (self.width , self.height ))
 
 

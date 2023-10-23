@@ -4,7 +4,7 @@ import threading
 import urllib.request
 import numpy as np
 import tensorflow as tf
-from .cnn_model import Model
+from .object_detection.objectDetectionModel import Model
 m1 = Model()
 
 class VideoCamera(object):

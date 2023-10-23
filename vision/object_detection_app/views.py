@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import StreamingHttpResponse
 import os
-from .object_detection import camera
+from . import camera
 # ! IMPORT FEATURE MODULE HERE
 
 

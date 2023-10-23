@@ -5,6 +5,7 @@ import urllib.request
 import numpy as np
 import tensorflow as tf
 from .object_detection.objectDetectionModel import Model
+from .pose_estimation.PoseEstimation import pose , mp_drawing , mp_pose
 m1 = Model()
 
 class VideoCamera(object):
@@ -43,6 +44,15 @@ class VideoCamera(object):
 
         # apply image processing here
         feed_img = self.image_processing(img)
+
+
+        # pose estimation
+        results = pose.process(feed_img)
+
+        if results.pose_landmarks:
+            # Render pose landmarks on the frame
+            mp_drawing.draw_landmarks(img, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
+
 
         # convert image to tensors
         img_tensor = m1.image_to_array(feed_img)

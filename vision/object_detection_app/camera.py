@@ -72,7 +72,7 @@ class VideoCamera(object):
                 continue
 
             object_width_in_frame = xmax - xmin
-            print(object_width_in_frame)
+            # print(object_width_in_frame)
             distance = (self.KNOWN_WIDTH * self.focal_length) / object_width_in_frame
             distance /= 100
             score_txt = f'{100 * round(score,0)}'

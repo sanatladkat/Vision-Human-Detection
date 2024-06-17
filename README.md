@@ -3,5 +3,3 @@ Introducing VISION, a fully scalable intranet-based detection and tracking web a
  
 You can visit us at: http://prahari.solutions/
 
-Hello
-
